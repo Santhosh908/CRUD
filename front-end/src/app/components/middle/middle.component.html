@@ -1,0 +1,71 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="middle">
+    <button>get a ramdom user</button>
+    <button class="btn btn primary" (click)="opendia()">add a new user</button>
+</div>
+<div>
+    <table class="table">
+       <tr>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search" ngModel required #name1="ngModel" (keyup)="name(name1)">
+            <button matSuffix mat-button (click)="name(name1)"><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search" ngModel required #email1="ngModel" (keyup)="email(email1)">
+            <button matSuffix mat-button (click)="email(email1)"><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search" ngModel required #phno1="ngModel" (keyup)="phnumber(phno1)">
+            <button matSuffix mat-button (click)="phnumber(phno1)"><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search" ngModel required #dob1="ngModel" (keyup)="dob(dob1)">
+            <button matSuffix mat-button (click)="dob(dob1)"><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search" ngModel required #loc1="ngModel" (keyup)="loc(loc1)">
+            <button matSuffix mat-button (click)="loc(loc1)"><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search" ngModel required #gen1="ngModel" (keyup)="address(gen1)">
+            <button matSuffix mat-button (click)="address(gen1)"><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+        <td>
+            <div class="flex">
+            <input type="text" placeholder="Search">
+            <button matSuffix mat-button><mat-icon>search</mat-icon></button>
+            </div>
+        </td>
+       </tr>
+        <tr class="row">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Date of Birth</th>
+            <th>Location</th>
+            <th>Gender</th>
+            <th>Address</th>
+        </tr>
+    <tr *ngFor="let i of dataSource" div="trow">
+        <td  class="row">{{i.name}}</td>
+        <td  class="row">{{i.email}}</td>
+        <td  class="row">{{i.num}}</td>
+        <td  class="row">{{i.date1}}</td>
+        <td class="row">{{i.location}}</td>
+        <td  class="row">{{i.gender}}</td>
+        <td  class="row">{{i.address}}</td>
+        </tr>
+    </table>
+</div>

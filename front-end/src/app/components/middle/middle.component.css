@@ -1,0 +1,23 @@
+.middle{
+    display: flex;
+}
+.middle>button{
+    margin: 1%;
+    padding: 1%
+}
+.row{
+    background-color: rgb(235, 235, 235);
+    padding: 0.5%;
+    width: 200px;
+}
+.table{
+    margin-top: 1%;
+    margin-left: 0%;
+    width: max-content;
+}
+.search{
+    display: flex;
+}
+.flex{
+    display: flex;
+}
