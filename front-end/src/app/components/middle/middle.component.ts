@@ -62,6 +62,7 @@ export class MiddleComponent implements OnInit {
   }
   dob(data1:any){
     var d=data1.value
+    // console.log(d);
     this.http.post("http://localhost:3000/bydob",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
       var key=Object.values(data)

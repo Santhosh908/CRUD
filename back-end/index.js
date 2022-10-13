@@ -45,7 +45,59 @@ app.post("/byname",(req,res)=>{
     })
 })
 app.post("/byemail",(req,res)=>{
-    
+    var name=req.body[0]
+    // console.log(name);
+    var querry=`SELECT * FROM neoproject.userdetails WHERE email LIKE "${name}%"`
+    database.query(querry,(err,rows)=>{
+        if(err)
+        throw err;
+        else
+        res.send(rows);
+    })
+})
+app.post("/byphno",(req,res)=>{
+    var name=req.body[0]
+    // console.log(name);
+    var querry=`SELECT * FROM neoproject.userdetails WHERE num LIKE "${name}%"`
+    database.query(querry,(err,rows)=>{
+        if(err)
+        throw err;
+        else
+        res.send(rows);
+    })
+})
+app.post("/bydob",(res,req)=>{
+    var name=req.body[0]
+    console.log(name);
+    var querry=`SELECT * FROM neoproject.userdetails WHERE date1 LIKE "${name}%"`
+    database.query(querry,(err,rows)=>{
+        if(err)
+        throw err;
+        else
+        res.send(rows);
+    })
+})
+app.post("/byaddress",(res,req)=>{
+    var name=req.body[0]
+    // console.log(name);
+    var querry=`SELECT * FROM neoproject.userdetails WHERE address LIKE "${name}%"`
+    database.query(querry,(err,rows)=>{
+        if(err)
+        throw err;
+        else
+        res.send(rows);
+    })
+})
+app.post("/byloc",(res,req)=>{
+    var name=req.body[0]
+    // console.log(name);
+    var querry=`SELECT * FROM neoproject.userdetails WHERE location LIKE "${name}%"`
+    database.query(querry,(err,rows)=>{
+        if(err)
+        throw err;
+        else
+        res.send(rows);
+    })
 })
 app.listen(PORT, function(){
     console.log("Server running on localhost:" + PORT);
