@@ -10,13 +10,15 @@ import { AdddialogueComponent } from './components/adddialogue/adddialogue.compo
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
+import { EditdialogComponent } from './components/editdialog/editdialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MiddleComponent,
-    AdddialogueComponent
+    AdddialogueComponent,
+    EditdialogComponent
   ],
   imports: [
     BrowserModule,

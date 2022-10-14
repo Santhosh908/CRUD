@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AdddialogueComponent } from '../adddialogue/adddialogue.component';
 import { HttpClient } from '@angular/common/http';
+import { EditdialogComponent } from '../editdialog/editdialog.component';
 
 @Component({
   selector: 'app-middle',
@@ -106,7 +107,14 @@ export class MiddleComponent implements OnInit {
       this.dataSource=MAIN_DATA;
     })
   }
-
+  edit(d:any){
+    this.dialog.open(EditdialogComponent,{
+      data:{
+        id:d
+      }
+    })
+    // console.log(d);
+  }
   ngOnInit(): void {
     this.http.get("http://localhost:3000/getdetails").subscribe(data=>{
       var key=Object.values(data)
