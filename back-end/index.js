@@ -19,7 +19,7 @@ app.post("/adddetails",(req,res)=>{
         throw err
         
     })
-})
+});
 app.get("/getdetails",(req,res)=>{
     var data1=[];
     var querry=`SELECT * FROM neoproject.userdetails`;
@@ -31,10 +31,9 @@ app.get("/getdetails",(req,res)=>{
         }
     })
     
-})
+});
 app.post("/byname",(req,res)=>{
     var name=req.body[0]
-    // console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE name LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -42,10 +41,9 @@ app.post("/byname",(req,res)=>{
         else
         res.send(rows);
     })
-})
+});
 app.post("/byemail",(req,res)=>{
     var name=req.body[0]
-    // console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE email LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -53,10 +51,9 @@ app.post("/byemail",(req,res)=>{
         else
         res.send(rows);
     })
-})
+});
 app.post("/byphno",(req,res)=>{
     var name=req.body[0]
-    // console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE num LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -64,7 +61,7 @@ app.post("/byphno",(req,res)=>{
         else
         res.send(rows);
     })
-})
+});
 app.post("/bydob",(res,req)=>{
     var name=req.body[0]
     console.log(name);
@@ -75,10 +72,9 @@ app.post("/bydob",(res,req)=>{
         else
         res.send(rows);
     })
-})
+});
 app.post("/byaddress",(res,req)=>{
     var name=req.body[0]
-    // console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE address LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -89,7 +85,6 @@ app.post("/byaddress",(res,req)=>{
 })
 app.post("/byloc",(res,req)=>{
     var name=req.body[0]
-    // console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE location LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -100,7 +95,6 @@ app.post("/byloc",(res,req)=>{
 })
 app.post("/searchdetails",(req,res)=>{
     var data1=[];
-    // console.log(req.body);
     var querry=`SELECT * FROM neoproject.userdetails WHERE id="${req.body[0]}"`;
     database.query(querry,function(err,rows){
         if(err)

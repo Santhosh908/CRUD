@@ -123,7 +123,6 @@ export class MiddleComponent implements OnInit {
         ELEMENT_DATA.push(key[i]);
         MAIN_DATA.push(key[i]);
       }
-      console.log(data)
     })
   }
 }

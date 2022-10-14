@@ -36,8 +36,8 @@ export class EditdialogComponent implements OnInit {
     this.add1=address.value
     this.http.post("http://localhost:3000/updatedetails",[this.name1,this.email1,this.num1,this.date12,this.location1,this.gen1,this.add1,this.id]).subscribe(data=>{
     })
-    // this.dialog.closeAll();
-    // window.location.reload();
+    this.dialog.closeAll();
+    window.location.reload();
   }
   ngOnInit(): void {
     console.log("Here");
