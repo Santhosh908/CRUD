@@ -9,10 +9,9 @@
 <input type="date" [ngModelOptions]="{standalone: true}" ngModel required #date="ngModel"><br><br>
 <label>Enter Your Location:</label><br>
 <input type="name" [ngModelOptions]="{standalone: true}" ngModel required #location="ngModel"><br><br>
-<label >Enter Your Gender:</label><br>
-<input type="radio" [ngModelOptions]="{standalone: true}" ngModel required #gender1="ngModel" name="gender" value="Male" ><label>Male</label><br>
-<input type="radio" [ngModelOptions]="{standalone: true}" ngModel required #gender2="ngModel" name="gender" value="Female"><label>Female</label><br><br>
-<label>Enter Your Address</label><br>
+<label >Enter Your Gender(Male/Female):</label><br>
+<input type="text" [ngModelOptions]="{standalone: true}" ngModel required #gender1="ngModel" name="gender" >
+<br><br><label>Enter Your Address</label><br>
 <input type="name" [ngModelOptions]="{standalone: true}" ngModel required #address="ngModel"><br><br>
 <button (click)="submit(name,email,number,date,location,gender1,address)">Submit</button>
 </form>
