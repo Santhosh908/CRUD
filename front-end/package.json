@@ -8,6 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "styles": [
+    "node_modules/bootstrap/scss/bootstrap.scss",
+    "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+    "src/styles.scss"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
@@ -22,6 +27,7 @@
     "@angular/router": "^14.2.0",
     "angular": "^1.8.3",
     "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

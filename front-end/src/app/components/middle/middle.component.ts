@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AdddialogueComponent } from '../adddialogue/adddialogue.component';
 import { HttpClient } from '@angular/common/http';
 import { EditdialogComponent } from '../editdialog/editdialog.component';
+import { RandomdialogComponent } from '../randomdialog/randomdialog.component';
 
 @Component({
   selector: 'app-middle',
@@ -14,6 +15,11 @@ export class MiddleComponent implements OnInit {
   constructor(private dialog:MatDialog,private http:HttpClient) { }
   opendia(){
     this.dialog.open(AdddialogueComponent);
+  }
+  opendia2(){
+    this.dialog.open(RandomdialogComponent,{
+      height:'70%'
+    });
   }
   dataSource = ELEMENT_DATA;
   name(data1:any){
@@ -30,7 +36,7 @@ export class MiddleComponent implements OnInit {
       if(d=="")
       this.dataSource=MAIN_DATA;
     })
-  }
+  };
   email(data1:any){
     var d=data1.value
     this.http.post("http://localhost:3000/byemail",[d]).subscribe(data=>{
@@ -113,8 +119,21 @@ export class MiddleComponent implements OnInit {
         id:d
       }
     })
-    // console.log(d);
   }
+  delit(id:any){
+    var k=id;
+    console.log(k);
+    // console.log(this.http.post("http://localhost:3000/check",[k]))
+    this.http.post("http://localhost:3000/check123",k).subscribe(data=>{
+      console.log(data);
+    })
+  }
+  // delete(id:any){
+  //   console.log(id);
+  //   this.http.post("http://localhost:3000/delete",id).subscribe(data=>{
+  //     console.log(data);
+  //   })
+  // }
   ngOnInit(): void {
     this.http.get("http://localhost:3000/getdetails").subscribe(data=>{
       var key=Object.values(data)

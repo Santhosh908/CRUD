@@ -11,6 +11,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import { EditdialogComponent } from './components/editdialog/editdialog.component';
+import { RandomdialogComponent } from './components/randomdialog/randomdialog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditdialogComponent } from './components/editdialog/editdialog.componen
     HeaderComponent,
     MiddleComponent,
     AdddialogueComponent,
-    EditdialogComponent
+    EditdialogComponent,
+    RandomdialogComponent
   ],
   imports: [
     BrowserModule,

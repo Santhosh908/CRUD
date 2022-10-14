@@ -8,10 +8,12 @@ app.use(bodyParser.json());
 app.use(cors())
 
 app.get('/', function(req, res) {
-	res.send('Hello from server')
+	res.send("Hello from server")
 })
-
-app.post("/adddetails",(req,res)=>{
+app.post("/check123",function(req,res){
+    res.send([100]);
+});
+app.post("/adddetails",function(req,res){
     var val=req.body;
     var querry=`INSERT INTO neoproject.userdetails(name,email,num,date1,location,gender,address) VALUES("${val[0]}","${val[1]}","${val[2]}","${val[3]}","${val[4]}","${val[5]}","${val[6]}")`;
     database.query(querry,function(err,rows){
@@ -19,7 +21,7 @@ app.post("/adddetails",(req,res)=>{
         throw err
         
     })
-});
+})
 app.get("/getdetails",(req,res)=>{
     var data1=[];
     var querry=`SELECT * FROM neoproject.userdetails`;
@@ -31,7 +33,7 @@ app.get("/getdetails",(req,res)=>{
         }
     })
     
-});
+})
 app.post("/byname",(req,res)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE name LIKE "${name}%"`
@@ -41,7 +43,7 @@ app.post("/byname",(req,res)=>{
         else
         res.send(rows);
     })
-});
+})
 app.post("/byemail",(req,res)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE email LIKE "${name}%"`
@@ -51,7 +53,7 @@ app.post("/byemail",(req,res)=>{
         else
         res.send(rows);
     })
-});
+})
 app.post("/byphno",(req,res)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE num LIKE "${name}%"`
@@ -61,7 +63,7 @@ app.post("/byphno",(req,res)=>{
         else
         res.send(rows);
     })
-});
+})
 app.post("/bydob",(res,req)=>{
     var name=req.body[0]
     console.log(name);
@@ -72,7 +74,7 @@ app.post("/bydob",(res,req)=>{
         else
         res.send(rows);
     })
-});
+})
 app.post("/byaddress",(res,req)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE address LIKE "${name}%"`
@@ -104,7 +106,7 @@ app.post("/searchdetails",(req,res)=>{
         }
     })
     
-});
+})
 app.post("/updatedetails",(req,res)=>{
     var val=req.body;
     var querry=`UPDATE neoproject.userdetails SET name="${val[0]}",email="${val[1]}",num="${val[2]}",date1="${val[3]}",location="${val[4]}",gender="${val[5]}",address="${val[6]}" WHERE id="${val[7]}"`;
@@ -113,7 +115,7 @@ app.post("/updatedetails",(req,res)=>{
         throw err
         
     })
-});
+})
 app.listen(PORT, function(){
     console.log("Server running on localhost:" + PORT);
-  });
+  })

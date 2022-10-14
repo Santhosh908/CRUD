@@ -1,0 +1,20 @@
+<div class="sizeclass">
+<h1 class="title"> Random User Details</h1>
+<div class="user-profile">
+	<img id="avatar" src="{{posts.picture.thumbnail}}" />
+    <div id="fullname">{{posts.name.title}}.{{posts.name.first}} {{posts.name.last}}</div>
+  <div id="username">
+  	dob: {{posts.dob.date}} age: {{posts.dob.age}}
+  </div>
+    <div class="description">
+      <div>Email: <span id="email">{{posts.email}}</span></div>
+      <div>City: <span id="city">{{posts.location.city}}</span></div>
+  </div>
+  <div class="footer" style="cursor: pointer;" >
+    <button id="btn" (click)="nextuser()" style="cursor: pointer;">Next User!</button>
+ </div>
+<div>
+<button class="footer" style="background-color: blue;width:50%;cursor:pointer;">Save</button>
+</div>
+</div>
+</div>
