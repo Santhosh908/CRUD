@@ -1,17 +1,17 @@
-<form #form1="ngForm">
+<form #form1="ngForm" class="mb-3">
     <label>Enter Your Name:</label><br>
-    <input type="name" [ngModelOptions]="{standalone: true}" ngModel required #name="ngModel" value="{{name1}}"><br><br>
+    <input type="name" class="form-control" id="exampleFormControlInput1" [ngModelOptions]="{standalone: true}" ngModel required #name="ngModel" value="{{name1}}"><br>
     <label>Enter Your Email:</label><br>
-    <input type="email" [ngModelOptions]="{standalone: true}" ngModel required #email="ngModel" value="{{email1}}"><br><br>
+    <input type="email" class="form-control" id="exampleFormControlInput1" [ngModelOptions]="{standalone: true}" ngModel required #email="ngModel" value="{{email1}}"><br>
     <label>Enter Your Phone Number:</label><br>
-    <input type="text" [ngModelOptions]="{standalone: true}" ngModel required #number="ngModel" value="{{num1}}"><br><br>
+    <input type="text" class="form-control" id="exampleFormControlInput1" [ngModelOptions]="{standalone: true}" ngModel required #number="ngModel" value="{{num1}}"><br>
     <label>Enter Your Date of Birth:</label><br>
-    <input type="date" [ngModelOptions]="{standalone: true}" ngModel required #date="ngModel" value="{{date12}}"><br><br>
+    <input type="date"  class="form-control" id="exampleFormControlInput1"[ngModelOptions]="{standalone: true}" ngModel required #date="ngModel" value="{{date12}}"><br>
     <label>Enter Your Location:</label><br>
-    <input type="name" [ngModelOptions]="{standalone: true}" ngModel required #location="ngModel" value="{{location1}}"><br><br>
+    <input type="name" class="form-control" id="exampleFormControlInput1" [ngModelOptions]="{standalone: true}" ngModel required #location="ngModel" value="{{location1}}"><br>
     <label >Enter Your Gender:</label><br>
-    <input type="text" [ngModelOptions]="{standalone: true}" ngModel required #gender1="ngModel" value="{{gen1}}" ><br><br>
+    <input type="text" style="width: 500px;" class="form-control" id="exampleFormControlInput1" [ngModelOptions]="{standalone: true}" ngModel required #gender1="ngModel" value="{{gen1}}" ><br>
     <label>Enter Your Address</label><br>
-    <input type="name" [ngModelOptions]="{standalone: true}" ngModel required #address="ngModel" value="{{add1}}"><br><br>
-    <button (click)="submit(name,email,number,date,location,gender1,address)">Submit</button>
+    <input type="name"  class="form-control" id="exampleFormControlInput1"[ngModelOptions]="{standalone: true}" style="width: 500px;" ngModel required #address="ngModel" value="{{add1}}"><br>
+    <button (click)="submit(name,email,number,date,location,gender1,address)" class="btn btn-success btn-lg btn-block" style="width: 500px;">Update</button>
     </form>

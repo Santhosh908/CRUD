@@ -10,9 +10,6 @@ app.use(cors())
 app.get('/', function(req, res) {
 	res.send("Hello from server")
 })
-app.post("/check123",function(req,res){
-    res.send([100]);
-});
 app.post("/adddetails",function(req,res){
     var val=req.body;
     var querry=`INSERT INTO neoproject.userdetails(name,email,num,date1,location,gender,address) VALUES("${val[0]}","${val[1]}","${val[2]}","${val[3]}","${val[4]}","${val[5]}","${val[6]}")`;
@@ -20,6 +17,16 @@ app.post("/adddetails",function(req,res){
         if(err)
         throw err
         
+    })
+})
+app.post("/deldetails/doit",(req,res)=>{
+    var k=req.body[0];
+    var querry=`DELETE FROM neoproject.userdetails WHERE id="${k}"`
+    database.query(querry,function(err,rows){
+        if(err)
+        throw err
+        else
+        res.send(rows)
     })
 })
 app.get("/getdetails",(req,res)=>{
@@ -44,6 +51,16 @@ app.post("/byname",(req,res)=>{
         res.send(rows);
     })
 })
+app.post("/bygen",(req,res)=>{
+    var name=req.body[0]
+    var querry=`SELECT * FROM neoproject.userdetails WHERE gender LIKE "${name}%"`
+    database.query(querry,(err,rows)=>{
+        if(err)
+        throw err;
+        else
+        res.send(rows);
+    })
+})
 app.post("/byemail",(req,res)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE email LIKE "${name}%"`
@@ -56,6 +73,7 @@ app.post("/byemail",(req,res)=>{
 })
 app.post("/byphno",(req,res)=>{
     var name=req.body[0]
+    console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE num LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -64,9 +82,8 @@ app.post("/byphno",(req,res)=>{
         res.send(rows);
     })
 })
-app.post("/bydob",(res,req)=>{
+app.post("/bydobf",(req,res)=>{
     var name=req.body[0]
-    console.log(name);
     var querry=`SELECT * FROM neoproject.userdetails WHERE date1 LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
@@ -75,7 +92,7 @@ app.post("/bydob",(res,req)=>{
         res.send(rows);
     })
 })
-app.post("/byaddress",(res,req)=>{
+app.post("/byaddress/find",(req,res)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE address LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
@@ -85,7 +102,7 @@ app.post("/byaddress",(res,req)=>{
         res.send(rows);
     })
 })
-app.post("/byloc",(res,req)=>{
+app.post("/byloc",(req,res)=>{
     var name=req.body[0]
     var querry=`SELECT * FROM neoproject.userdetails WHERE location LIKE "${name}%"`
     database.query(querry,(err,rows)=>{

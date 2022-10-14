@@ -2,19 +2,19 @@
 <h1 class="title"> Random User Details</h1>
 <div class="user-profile">
 	<img id="avatar" src="{{posts.picture.thumbnail}}" />
-    <div id="fullname">{{posts.name.title}}.{{posts.name.first}} {{posts.name.last}}</div>
-  <div id="username">
-  	dob: {{posts.dob.date}} age: {{posts.dob.age}}
+    <div style="font-size: large;" id="fullname">{{posts.name.title}}.{{posts.name.first}} {{posts.name.last}}</div>
+  <div style="font-size: large;" id="username">
+  	dob: {{posts.dob.date}}<br>Age: {{posts.dob.age}}
   </div>
-    <div class="description">
-      <div>Email: <span id="email">{{posts.email}}</span></div>
-      <div>City: <span id="city">{{posts.location.city}}</span></div>
+    <div style="font-size: large;" class="description">
+      <div>Email: <p id="email" style="font-size: large;">{{posts.email}}</p></div>
+      <div>City: <span style="font-size: large;" id="city">{{posts.location.city}}</span></div>
   </div>
   <div class="footer" style="cursor: pointer;" >
-    <button id="btn" (click)="nextuser()" style="cursor: pointer;">Next User!</button>
+    <button class="btn btn-info" style="width: 400px; " (click)="nextuser()" >Next User!</button>
  </div>
 <div>
-<button class="footer" style="background-color: blue;width:50%;cursor:pointer;">Save</button>
+<button class="btn btn-success" style="width: 300px; margin-left:15%">Save</button>
 </div>
 </div>
 </div>

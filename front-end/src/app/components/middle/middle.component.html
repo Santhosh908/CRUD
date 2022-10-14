@@ -1,55 +1,58 @@
 <div class="middle">
-    <button (click)="opendia2()" class="btn-primary">get a ramdom user</button>
-    <button class="btn primary" (click)="opendia()">add a new user</button>
+    <button (click)="opendia2()" class="btn btn-primary">Get a ramdom user</button>
+    <button class="btn btn-primary" (click)="opendia()">Add a new user</button>
 </div>
-<div>
-    <table class="table">
+<div class="color1">
+    <table  class="container mt-3">
        <tr>
         <td>
             <div class="flex1">
-            <input type="text" placeholder="Search" ngModel required #name1="ngModel" (keyup)="name(name1)">
-            <button matSuffix mat-button (click)="name(name1)"><mat-icon>search</mat-icon></button>
+            <input type="text"  class="form-control"  placeholder="Search" ngModel required #name1="ngModel" (keyup)="name(name1)">
+            <!-- <span  class="input-group-text border-0" id="search-addon">
+                <mat-icon >search</mat-icon>
+              </span> -->
+           </div>
+        </td>
+        <td>
+            <div class="flex1">
+            <input type="text" class="form-control" placeholder="Search" ngModel required #email1="ngModel" (keyup)="email(email1)">
+            <!-- <button matSuffix mat-button (click)="email(email1)"><mat-icon>search</mat-icon></button> -->
             </div>
         </td>
         <td>
             <div class="flex1">
-            <input type="text" placeholder="Search" ngModel required #email1="ngModel" (keyup)="email(email1)">
-            <button matSuffix mat-button (click)="email(email1)"><mat-icon>search</mat-icon></button>
+            <input type="text" class="form-control" placeholder="Search" ngModel required #phno1="ngModel" (keyup)="phnumber(phno1)">
+            <!-- <button matSuffix mat-button (click)="phnumber(phno1)"><mat-icon>search</mat-icon></button> -->
             </div>
         </td>
         <td>
             <div class="flex1">
-            <input type="text" placeholder="Search" ngModel required #phno1="ngModel" (keyup)="phnumber(phno1)">
-            <button matSuffix mat-button (click)="phnumber(phno1)"><mat-icon>search</mat-icon></button>
+            <input type="text" class="form-control" placeholder="Search" ngModel required #dob1="ngModel" (keyup)="dobf(dob1)">
+            <!-- <button matSuffix mat-button (click)="dob(dob1)"><mat-icon>search</mat-icon></button> -->
             </div>
         </td>
         <td>
             <div class="flex1">
-            <input type="text" placeholder="Search" ngModel required #dob1="ngModel" (keyup)="dob(dob1)">
-            <button matSuffix mat-button (click)="dob(dob1)"><mat-icon>search</mat-icon></button>
-            </div>
-        </td>
-        <td>
-            <div class="flex1">
-            <input type="text" placeholder="Search" ngModel required #loc1="ngModel" (keyup)="loc(loc1)">
-            <button matSuffix mat-button (click)="loc(loc1)"><mat-icon>search</mat-icon></button>
+            <input type="text" class="form-control" placeholder="Search" ngModel required #loc1="ngModel" (keyup)="loc(loc1)">
+            <!-- <button matSuffix mat-button (click)="loc(loc1)"><mat-icon>search</mat-icon></button> -->
             </div>
         </td>
         <td>
             <div class="flex">
-            <input type="text" placeholder="Search" ngModel required #gen1="ngModel" (keyup)="address(gen1)">
-            <button matSuffix mat-button (click)="address(gen1)"><mat-icon>search</mat-icon></button>
+            <input type="text" class="form-control" placeholder="Search" ngModel required #gen1="ngModel" (keyup)="gen(gen1)">
+            <!-- <button matSuffix mat-button (click)="address(gen1)"><mat-icon>search</mat-icon></button> -->
             </div>
         </td>
         <td>
             <div class="flex1">
-            <input type="text" placeholder="Search">
-            <button matSuffix mat-button><mat-icon>search</mat-icon></button>
+            <input type="text" class="form-control" (keyup)="address(gen1)" placeholder="Search">
+            <!-- <button matSuffix mat-button><mat-icon>search</mat-icon></button> -->
             </div>
         </td>
        </tr>
-        <tr class="row1">
-            <th>Name</th>
+       <br>
+        <tr >
+            <th >Name</th>
             <th>Email</th>
             <th>Phone Number</th>
             <th>Date of Birth</th>
@@ -57,16 +60,17 @@
             <th>Gender</th>
             <th>Address</th>
         </tr>
+        <br>
     <tr *ngFor="let i of dataSource" div="trow">
-        <td  class="row1">{{i.name}}</td>
-        <td  class="row1">{{i.email}}</td>
-        <td  class="row1">{{i.num}}</td>
-        <td  class="row1">{{i.date1}}</td>
-        <td class="row1">{{i.location}}</td>
-        <td  class="row1">{{i.gender}}</td>
-        <td  class="row1">{{i.address}}</td>
-        <button (click)="edit(i.id)">edit</button>
-        <button (click)="delit(i.id)">delete</button>
+        <td  >{{i.name}}</td>
+        <td  >{{i.email}}</td>
+        <td  >{{i.num}}</td>
+        <td  >{{i.date1}}</td>
+        <td >{{i.location}}</td>
+        <td >{{i.gender}}</td>
+        <td  >{{i.address}}</td>
+        <td><button (click)="edit(i.id)" class="btn btn-secondary " style="width: 100px;">Edit</button></td>
+        <td><button (click)="delit(i.id)" class="btn btn-danger "  style="width: 100px;">Delete</button></td>
         </tr>
     </table>
 </div>
