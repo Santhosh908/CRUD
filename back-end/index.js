@@ -12,10 +12,7 @@ app.get('/', function(req, res) {
 })
 app.post("/adddetails",function(req,res){
     const val=req.body;
-    //const querry=`INSERT INTO neoproject.userdetails(name,email,num,date1,location,gender,address) VALUES("${val[0]}","${val[1]}","${val[2]}","${val[3]}","${val[4]}","${val[5]}","${val[6]}")`;
     const querry=`INSERT INTO neoproject.userdetails(name,email,num,date1,location,gender,address) VALUES(?,?,?,?,?,?,?)`;
-    //VALUES("${val[0]}","${val[1]}","${val[2]}","${val[3]}","${val[4]}","${val[5]}","${val[6]}")`;
-
     database.query(querry,[val[0],val[1],val[2],val[3],val[4],val[5],val[6]],function(err,rows){
         if(err)
         throw err
