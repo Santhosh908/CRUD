@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-var database=require('./database');
+const database=require('./database');
 const PORT = 3000;
 const app = express();
 app.use(bodyParser.json());
@@ -11,8 +11,8 @@ app.get('/', function(req, res) {
 	res.send("Hello from server")
 })
 app.post("/adddetails",function(req,res){
-    var val=req.body;
-    var querry=`INSERT INTO neoproject.userdetails(name,email,num,date1,location,gender,address) VALUES("${val[0]}","${val[1]}","${val[2]}","${val[3]}","${val[4]}","${val[5]}","${val[6]}")`;
+    const val=req.body;
+    const querry=`INSERT INTO neoproject.userdetails(name,email,num,date1,location,gender,address) VALUES("${val[0]}","${val[1]}","${val[2]}","${val[3]}","${val[4]}","${val[5]}","${val[6]}")`;
     database.query(querry,function(err,rows){
         if(err)
         throw err
@@ -20,8 +20,8 @@ app.post("/adddetails",function(req,res){
     })
 })
 app.post("/deldetails/doit",(req,res)=>{
-    var k=req.body[0];
-    var querry=`DELETE FROM neoproject.userdetails WHERE id="${k}"`
+    const k=req.body[0];
+    const querry=`DELETE FROM neoproject.userdetails WHERE id="${k}"`
     database.query(querry,function(err,rows){
         if(err)
         throw err
@@ -30,8 +30,8 @@ app.post("/deldetails/doit",(req,res)=>{
     })
 })
 app.get("/getdetails",(req,res)=>{
-    var data1=[];
-    var querry=`SELECT * FROM neoproject.userdetails`;
+    const data1=[];
+    const querry=`SELECT * FROM neoproject.userdetails`;
     database.query(querry,function(err,rows){
         if(err)
         throw err
@@ -42,8 +42,8 @@ app.get("/getdetails",(req,res)=>{
     
 })
 app.post("/byname",(req,res)=>{
-    var name=req.body[0]
-    var querry=`SELECT * FROM neoproject.userdetails WHERE name LIKE "${name}%"`
+    const name=req.body[0]
+    const querry=`SELECT * FROM neoproject.userdetails WHERE name LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -52,8 +52,8 @@ app.post("/byname",(req,res)=>{
     })
 })
 app.post("/bygen",(req,res)=>{
-    var name=req.body[0]
-    var querry=`SELECT * FROM neoproject.userdetails WHERE gender LIKE "${name}%"`
+    const name=req.body[0]
+    const querry=`SELECT * FROM neoproject.userdetails WHERE gender LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -62,8 +62,8 @@ app.post("/bygen",(req,res)=>{
     })
 })
 app.post("/byemail",(req,res)=>{
-    var name=req.body[0]
-    var querry=`SELECT * FROM neoproject.userdetails WHERE email LIKE "${name}%"`
+    const name=req.body[0]
+    const querry=`SELECT * FROM neoproject.userdetails WHERE email LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -72,9 +72,9 @@ app.post("/byemail",(req,res)=>{
     })
 })
 app.post("/byphno",(req,res)=>{
-    var name=req.body[0]
+    const name=req.body[0]
     console.log(name);
-    var querry=`SELECT * FROM neoproject.userdetails WHERE num LIKE "${name}%"`
+    const querry=`SELECT * FROM neoproject.userdetails WHERE num LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -83,8 +83,8 @@ app.post("/byphno",(req,res)=>{
     })
 })
 app.post("/bydobf",(req,res)=>{
-    var name=req.body[0]
-    var querry=`SELECT * FROM neoproject.userdetails WHERE date1 LIKE "${name}%"`
+    const name=req.body[0]
+    const querry=`SELECT * FROM neoproject.userdetails WHERE date1 LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -93,8 +93,8 @@ app.post("/bydobf",(req,res)=>{
     })
 })
 app.post("/byaddress/find",(req,res)=>{
-    var name=req.body[0]
-    var querry=`SELECT * FROM neoproject.userdetails WHERE address LIKE "${name}%"`
+    const name=req.body[0]
+    const querry=`SELECT * FROM neoproject.userdetails WHERE address LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -103,8 +103,8 @@ app.post("/byaddress/find",(req,res)=>{
     })
 })
 app.post("/byloc",(req,res)=>{
-    var name=req.body[0]
-    var querry=`SELECT * FROM neoproject.userdetails WHERE location LIKE "${name}%"`
+    const name=req.body[0]
+    const querry=`SELECT * FROM neoproject.userdetails WHERE location LIKE "${name}%"`
     database.query(querry,(err,rows)=>{
         if(err)
         throw err;
@@ -113,8 +113,8 @@ app.post("/byloc",(req,res)=>{
     })
 })
 app.post("/searchdetails",(req,res)=>{
-    var data1=[];
-    var querry=`SELECT * FROM neoproject.userdetails WHERE id="${req.body[0]}"`;
+    const data1=[];
+    const querry=`SELECT * FROM neoproject.userdetails WHERE id="${req.body[0]}"`;
     database.query(querry,function(err,rows){
         if(err)
         throw err
@@ -125,8 +125,8 @@ app.post("/searchdetails",(req,res)=>{
     
 })
 app.post("/updatedetails",(req,res)=>{
-    var val=req.body;
-    var querry=`UPDATE neoproject.userdetails SET name="${val[0]}",email="${val[1]}",num="${val[2]}",date1="${val[3]}",location="${val[4]}",gender="${val[5]}",address="${val[6]}" WHERE id="${val[7]}"`;
+    const val=req.body;
+    const querry=`UPDATE neoproject.userdetails SET name="${val[0]}",email="${val[1]}",num="${val[2]}",date1="${val[3]}",location="${val[4]}",gender="${val[5]}",address="${val[6]}" WHERE id="${val[7]}"`;
     database.query(querry,function(err,rows){
         if(err)
         throw err
