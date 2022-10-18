@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Dialog } from '@angular/cdk/dialog';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -17,6 +16,5 @@ export class AdddialogueComponent implements OnInit {
     this.dialog.closeAll();
     window.location.reload();
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(){}
 }

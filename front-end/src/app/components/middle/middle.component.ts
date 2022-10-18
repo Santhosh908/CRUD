@@ -23,11 +23,11 @@ export class MiddleComponent implements OnInit {
   }
   dataSource = ELEMENT_DATA;
   name(data1:any){
-    var d=data1.value
+    let d=data1.value
     this.http.post("http://localhost:3000/byname",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -38,11 +38,11 @@ export class MiddleComponent implements OnInit {
     })
   };
   email(data1:any){
-    var d=data1.value
+    let d=data1.value
     this.http.post("http://localhost:3000/byemail",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -53,11 +53,11 @@ export class MiddleComponent implements OnInit {
     })
   }
   phnumber(data1:any){
-    var d=data1.value
+    let d=data1.value
     this.http.post("http://localhost:3000/byphno",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -68,7 +68,7 @@ export class MiddleComponent implements OnInit {
     })
   }
   dobf(data1:any){
-    var d=data1.value
+    let d=data1.value
     if(d.length==0){
     this.dataSource=MAIN_DATA;
     console.log(d+"null");
@@ -77,8 +77,8 @@ export class MiddleComponent implements OnInit {
       console.log("sent");
     this.http.post("http://localhost:3000/bydobf",[data1.value]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -89,11 +89,11 @@ export class MiddleComponent implements OnInit {
   }
   }
   gen(data1:any){
-    var d=data1.value
+    let d=data1.value
     this.http.post("http://localhost:3000/bygen",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -107,8 +107,8 @@ export class MiddleComponent implements OnInit {
     var d=data1.value
     this.http.post("http://localhost:3000/byloc",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -119,12 +119,12 @@ export class MiddleComponent implements OnInit {
     })
   }
   address(data1:any){
-    var d=data1.value
+    let d=data1.value
     console.log(d+"here")
     this.http.post("http://localhost:3000/byaddress/find",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -143,12 +143,10 @@ export class MiddleComponent implements OnInit {
   }
   delit(id:any){
     var k=id;
-    console.log(k);
-    //console.log(this.http.post("http://localhost:3000/deldetails",[k]))
     this.http.post("http://localhost:3000/deldetails/doit",[k]).subscribe(data=>{
       ELEMENT_DATA=[]
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i])
       }
@@ -161,8 +159,8 @@ export class MiddleComponent implements OnInit {
   }
   ngOnInit(): void {
     this.http.get("http://localhost:3000/getdetails").subscribe(data=>{
-      var key=Object.values(data)
-      var l=key.length;
+      let key=Object.values(data)
+      let l=key.length;
       for(let i=0;i<l;i++){
         ELEMENT_DATA.push(key[i]);
         MAIN_DATA.push(key[i]);

@@ -30,7 +30,6 @@ app.post("/deldetails/doit",(req,res)=>{
     })
 })
 app.get("/getdetails",(req,res)=>{
-    const data1=[];
     const querry=`SELECT * FROM neoproject.userdetails`;
     database.query(querry,function(err,rows){
         if(err)
@@ -113,7 +112,6 @@ app.post("/byloc",(req,res)=>{
     })
 })
 app.post("/searchdetails",(req,res)=>{
-    const data1=[];
     const querry=`SELECT * FROM neoproject.userdetails WHERE id="${req.body[0]}"`;
     database.query(querry,function(err,rows){
         if(err)

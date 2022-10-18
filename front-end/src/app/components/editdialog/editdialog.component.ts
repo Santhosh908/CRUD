@@ -44,7 +44,7 @@ export class EditdialogComponent implements OnInit {
     console.log(this.data1.id);
     this.http.post("http://localhost:3000/searchdetails",[this.data1.id]).subscribe(data=>{
       console.log(data);
-      var k=Object.values(data);
+      let k=Object.values(data);
       this.name1=k[0].name;
       this.email1=k[0].email;
       this.num1=k[0].num;
