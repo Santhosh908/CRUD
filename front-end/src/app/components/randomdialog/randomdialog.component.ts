@@ -21,7 +21,8 @@ export class RandomdialogComponent implements OnInit {
         });
   }
   save(name:any,email:any,number:any,date:any,location:any,gender:any,address:any){
-    this.http.post("http://localhost:3000/adddetails",[name,email,number,date,location,gender,address]).subscribe(data=>{
+    let data1=date.slice(0,10);
+    this.http.post("http://localhost:3000/adddetails",[name,email,number,data1,location,gender,address]).subscribe(data=>{
     })
     this.dialog.closeAll();
     window.alert("Sucessfully added");
@@ -32,7 +33,6 @@ export class RandomdialogComponent implements OnInit {
         .subscribe(response => {
           let k=Object.values(response)[0][0];
           this.posts = k;
-          console.log(k);
         });
   }
 
