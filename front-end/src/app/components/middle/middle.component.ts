@@ -104,7 +104,7 @@ export class MiddleComponent implements OnInit {
     })
   }
   loc(data1:any){
-    var d=data1.value
+    let d=data1.value
     this.http.post("http://localhost:3000/byloc",[d]).subscribe(data=>{
       ELEMENT_DATA=[]
       let key=Object.values(data)
@@ -142,7 +142,7 @@ export class MiddleComponent implements OnInit {
     })
   }
   delit(id:any){
-    var k=id;
+    let k=id;
     this.http.post("http://localhost:3000/deldetails/doit",[k]).subscribe(data=>{
       ELEMENT_DATA=[]
       let key=Object.values(data)
