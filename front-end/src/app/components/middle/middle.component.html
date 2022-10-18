@@ -3,7 +3,7 @@
     <button class="btn btn-primary" (click)="opendia()">Add a new user</button>
 </div>
 <div class="color1">
-    <table  class="container mt-3">
+    <table  aria-describedby="mydescrib" class="container mt-3">
        <tr>
         <td>
             <div class="flex1">
@@ -43,13 +43,13 @@
        </tr>
        <br>
         <tr >
-            <th >Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Date of Birth</th>
-            <th>Location</th>
-            <th>Gender</th>
-            <th>Address</th>
+            <th id="col1">Name</th>
+            <th id="col2">Email</th>
+            <th id="col3">Phone Number</th>
+            <th id="col4">Date of Birth</th>
+            <th id="col5">Location</th>
+            <th id="col6">Gender</th>
+            <th id="col7">Address</th>
         </tr>
         <br>
     <tr *ngFor="let i of dataSource" div="trow">
