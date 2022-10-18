@@ -1,9 +1,9 @@
 const mqsql=require('mysql');
- var connection=mqsql.createConnection({
+ const connection=mqsql.createConnection({
     host:"localhost",
     database:"neoproject",
     user:"root",
-    password:"yourpassword"
+    password:"santhosh@2003"
  });
  connection.connect(function(error){
     if(error){
