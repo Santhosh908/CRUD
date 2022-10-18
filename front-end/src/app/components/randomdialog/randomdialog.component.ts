@@ -16,7 +16,7 @@ export class RandomdialogComponent implements OnInit {
   ngOnInit(): void {
     this.service.getPosts()
         .subscribe(response => {
-          var k=Object.values(response)[0][0];
+          let k=Object.values(response)[0][0];
           this.posts = k;
         });
   }
@@ -30,7 +30,7 @@ export class RandomdialogComponent implements OnInit {
   nextuser(){
     this.service.getPosts()
         .subscribe(response => {
-          var k=Object.values(response)[0][0];
+          let k=Object.values(response)[0][0];
           this.posts = k;
           console.log(k);
         });
